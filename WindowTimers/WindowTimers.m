@@ -75,8 +75,9 @@
 }
 
 - (id)clearTimeout {
+    __block __weak NSMapTable * weakDispatchSourcesMapping = _dispatchSourcesMapping;
     return ^(NSNumber *timeout) {
-        dispatch_source_t source = [_dispatchSourcesMapping objectForKey:timeout];
+        dispatch_source_t source = [weakDispatchSourcesMapping objectForKey:timeout];
         if (source != nil) {
             dispatch_source_cancel(source);
         }
