@@ -6,6 +6,10 @@
     NSMapTable *_dispatchSourcesMapping;
 }
 
+- (instancetype)init {
+    return [self initWithDispatchQueue:dispatch_get_main_queue()];
+}
+
 - (instancetype)initWithDispatchQueue:(dispatch_queue_t)queue {
     if (self = [super init]) {
         _timeoutCounter = 0;

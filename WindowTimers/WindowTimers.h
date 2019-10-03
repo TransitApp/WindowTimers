@@ -4,6 +4,7 @@
 
 @interface WTWindowTimers : NSObject
 
+- (instancetype)init;
 - (instancetype)initWithDispatchQueue:(dispatch_queue_t)queue;
 
 - (void)extend:(id)context;
