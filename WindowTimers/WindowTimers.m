@@ -13,7 +13,7 @@
 - (instancetype)initWithDispatchQueue:(dispatch_queue_t)queue {
     if (self = [super init]) {
         _timeoutCounter = 0;
-        _queue = queue;//dispatch_get_main_queue();
+        _queue = queue;
         _dispatchSourcesMapping = [NSMapTable weakToWeakObjectsMapTable];
         self.tolerance = 10;
     }
